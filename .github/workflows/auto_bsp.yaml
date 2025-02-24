@@ -21,6 +21,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git reset --hard HEAD
         git add src/02
         git commit -m "auto bsp update" src/02
 
