@@ -21,12 +21,8 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git reset --hard HEAD
-        git add src/02
-        git commit -m "auto bsp update" src/02
-
-    - name: Switch to Branch standard
-      run: git checkout -b standard
+        git add src
+        git commit -m "auto-bsp-changes"
 
     - name: Push Changes
       uses: ad-m/github-push-action@v0.6.0
