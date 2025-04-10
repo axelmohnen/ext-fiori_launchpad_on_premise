@@ -8,8 +8,10 @@ sap.ui.define(["sap/ui/core/UIComponent", "z2ui5/model/models", "z2ui5/cc/Server
             ]
         },
         async init() {
-            
-            z2ui5.oConfig = {};
+
+            if (typeof z2ui5 !== 'undefined') {
+                z2ui5.oConfig = {};
+            }
             
             UIComponent.prototype.init.apply(this, arguments);
 
@@ -17,9 +19,12 @@ sap.ui.define(["sap/ui/core/UIComponent", "z2ui5/model/models", "z2ui5/cc/Server
                 z2ui5 = {};
             }
             if (z2ui5?.checkLocal == false) {
-            z2ui5 = {};
+                z2ui5 = {};
             }
 
+            if (typeof z2ui5.oConfig == 'undefined') {
+                z2ui5.oConfig = {};
+            }
             z2ui5.oDeviceModel = Models.createDeviceModel();
             this.setModel(z2ui5.oDeviceModel, "device");
 
