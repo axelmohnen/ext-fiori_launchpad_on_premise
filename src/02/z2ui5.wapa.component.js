@@ -8,11 +8,11 @@ sap.ui.define(["sap/ui/core/UIComponent", "z2ui5/model/models", "z2ui5/cc/Server
             ]
         },
         async init() {
-
+            
             if (typeof z2ui5 !== 'undefined') {
                 z2ui5.oConfig = {};
             }
-            
+
             UIComponent.prototype.init.apply(this, arguments);
 
             if (typeof z2ui5 == 'undefined') {
