@@ -22,7 +22,9 @@ sap.ui.define(["sap/ui/core/UIComponent", "z2ui5/model/models", "z2ui5/cc/Server
                 z2ui5 = {};
             }
 
-            z2ui5.oConfig = {};
+            if (typeof z2ui5.oConfig == 'undefined') {
+                z2ui5.oConfig = {};
+            }
             z2ui5.oDeviceModel = Models.createDeviceModel();
             this.setModel(z2ui5.oDeviceModel, "device");
 
